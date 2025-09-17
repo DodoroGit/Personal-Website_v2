@@ -32,7 +32,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0rem; /* 沒有距離 */
 }
 
 nav a {
@@ -106,4 +106,47 @@ nav a:hover {
 /* 段落文字 (確保也套用字體) */
 .page-content p {
   font-family: Cambria, "DFKai-SB", serif;
+}
+
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;  /* 改成直向排列 */
+  gap: 1rem;
+  justify-content: flex-start; /* 靠左 */
+  align-items: flex-start;     /* 子項目靠左 */
+  padding: 0;
+  margin: 0;
+}
+
+
+.contact-list li {
+  background: rgba(50, 50, 90, 0.9);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.contact-list li:hover {
+  transform: translateY(-5px);
+  background: rgba(77, 163, 255, 0.2);
+}
+
+.contact-list .label {
+  font-weight: 700;
+  margin-right: 0.3rem;
+  color: #ffffff;
+}
+
+.contact-list a {
+  color: #4da3ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.contact-list a:hover {
+  color: #82c6ff;
+  text-decoration: underline;
 }
