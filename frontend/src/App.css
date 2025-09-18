@@ -95,17 +95,12 @@ nav a:hover {
   text-align: center;
   color: #e0e0e0;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  font-family: Cambria, "DFKai-SB", serif;
+  font-family: Arial, "DFKai-SB", serif;
 }
 
 /* 區塊之間增加分隔效果 */
 .page-wrapper:not(:last-child) .page-content {
   margin-bottom: 2rem;
-}
-
-/* 段落文字 (確保也套用字體) */
-.page-content p {
-  font-family: Cambria, "DFKai-SB", serif;
 }
 
 .contact-list {
@@ -149,4 +144,58 @@ nav a:hover {
 .contact-list a:hover {
   color: #82c6ff;
   text-decoration: underline;
+}
+
+/* 首頁專用內容排版 */
+.home-content section {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* 子標題 (h3) */
+.home-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* 列表樣式 */
+.home-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.home-content li {
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+
+/* 工作描述縮小字體 */
+.job-desc {
+  font-size: 0.95rem;
+  color: #cfcfcf;
+}
+
+/* 技能標籤 */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill-tags span {
+  background: rgba(77, 163, 255, 0.15);
+  border: 1px solid rgba(77, 163, 255, 0.4);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  color: #4da3ff;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.skill-tags span:hover {
+  background: rgba(77, 163, 255, 0.3);
+  color: #ffffff;
 }
