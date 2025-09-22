@@ -18,71 +18,39 @@ function Resume() {
           <h3>💼 工作經驗</h3>
           <ul>
             <li>
-              聯發科技 ( MediaTek ) — Web Backend Engineer ( 2024/10 ~ 在職中 )
+              <strong>聯發科技 ( MediaTek ) — Web Backend Engineer ( 2024/10 ~ )</strong>
+              <ul>
+                <li>
+                  <strong>生成式 AI 平台「達哥」開發與維運（企業內外部使用）</strong>
+                  <ul>
+                    <li>初期於 QA Team，負責功能驗證、手動測試流程設計、測試腳本撰寫、產品文件撰寫</li>
+                    <li>後續轉至 Backend Team，負責內部使用者 Search 功能 API 開發，使用 gRPC 串接微服務</li>
+                    <li>撰寫單元測試 (Unit Test)，並操作 Gitea / Gitea Action 完成 CI/CD 流程</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>晶片設計數據模擬分析平台（跨部門合作）</strong>
+                  <ul>
+                    <li>資料 Migration 流程開發：接收使用者 Excel，進行資料清理、上傳至 MinIO，並導入 PostgreSQL</li>
+                    <li>資料上線後於 Web 系統呈現，支援設計部門業務需求</li>
+                    <li>API 開發與除錯：使用 RESTful API 與 GraphQL 串接，處理權限控管、資料查詢、篩選邏輯</li>
+                    <li>撰寫單元測試，維護系統穩定度</li>
+                    <li>技術環境：Golang (Gin)、PostgreSQL、MinIO、Grafana、TablePlus</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>其他經驗與技術</strong>
+                  <ul>
+                    <li>熟悉 Docker、Docker Compose 部署流程</li>
+                    <li>測試環境：Kubernetes (K8S)，正式環境：部門內部機器 + Docker Compose</li>
+                    <li>熟悉部署流程，主要透過 CI/CD Pipeline 部署（偶爾透過跳板機操作）</li>
+                  </ul>
+                </li>
+              </ul>
             </li>
           </ul>
         </section>
 
-        {/* 技能分類 */}
-        <section className="resume-card">
-          <h3>🛠 技能</h3>
-
-          <h4>後端技能</h4>
-          <div className="skill-tags">
-            <span>Golang (Gin)</span>
-            <span>Python (Flask / Django / FastAPI)</span>
-            <span>gRPC</span>
-            <span>RESTful API</span>
-            <span>GraphQL</span>
-            <span>JWT</span>
-            <span>Unit Test (Golang)</span>
-          </div>
-
-          <h4>前端技能</h4>
-          <div className="skill-tags">
-            <span>React.js</span>
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Bootstrap</span>
-            <span>jQuery</span>
-          </div>
-
-          <h4>資料庫</h4>
-          <div className="skill-tags">
-            <span>PostgreSQL</span>
-            <span>MongoDB</span>
-            <span>PgAadmin</span>
-            <span>TablePlus</span>
-            <span>MongoDB Compass</span>
-          </div>
-
-          <h4>雲端與部署</h4>
-          <div className="skill-tags">
-            <span>AWS EC2</span>
-            <span>AWS Route 53</span>
-            <span>Heroku</span>
-            <span>Docker</span>
-            <span>Docker Compose</span>
-            <span>MinIO</span>
-            <span>Nginx</span>
-          </div>
-
-          <h4>版本控制與 CI/CD</h4>
-          <div className="skill-tags">
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>Gitea</span>
-            <span>GitHub Actions</span>
-            <span>Gitea Actions</span>
-          </div>
-
-          <h4>其他工具</h4>
-          <div className="skill-tags">
-            <span>Ngrok</span>
-            <span>Grafana</span>
-          </div>
-        </section>
       </div>
     </div>
   )

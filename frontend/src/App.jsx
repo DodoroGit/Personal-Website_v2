@@ -15,7 +15,7 @@ function App() {
       {/* 導覽列 */}
       <nav>
         <Link to="/">首頁</Link>
-        <Link to="/resume">歷年履歷</Link>
+        <Link to="/resume">學歷與經歷</Link>
         <Link to="/portfolio">作品集介紹</Link>
         <Link to="/modules">模組功能</Link>
         <Link to="/contact">聯絡資料</Link>
