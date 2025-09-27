@@ -1,12 +1,12 @@
-# 建置階段
-FROM node:20 AS build
+# Dockerfile (frontend)
+FROM node:18 AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
 
-# 部署階段 (Nginx)
+# 用 nginx 來 serve build 出來的靜態檔案
 FROM nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
