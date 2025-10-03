@@ -4,6 +4,9 @@ import Resume from "./pages/Resume"
 import Contact from "./pages/Contact"
 import Portfolio from "./pages/Portfolio"
 import Modules from "./pages/Modules"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+import Admin from "./pages/Admin"
 import "./App.css"
 
 function App() {
@@ -19,6 +22,9 @@ function App() {
         <Link to="/portfolio">作品集介紹</Link>
         <Link to="/modules">模組功能</Link>
         <Link to="/contact">聯絡資料</Link>
+        <Link to="/login">登入</Link>
+        <Link to="/register">註冊</Link>
+        <Link to="/admin">管理後台</Link>
       </nav>
 
       {/* 主內容 */}
@@ -29,6 +35,9 @@ function App() {
           <Route path="/modules" element={<Modules />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </div>
     </Router>
