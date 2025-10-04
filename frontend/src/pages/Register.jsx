@@ -4,7 +4,7 @@ function Register() {
   const [nickname, setNickname] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [verifyCode, setVerifyCode] = useState("")
+  const [registerCode, setRegisterCode] = useState("")
   const [message, setMessage] = useState("")
 
   const handleRegister = async (e) => {
@@ -17,7 +17,7 @@ function Register() {
           nickname,
           email,
           password,
-          verify_code: verifyCode,
+          verify_code: registerCode,
         }),
       })
       if (!res.ok) {
@@ -25,6 +25,10 @@ function Register() {
         throw new Error(err.detail || "註冊失敗")
       }
       setMessage("註冊成功 ✅")
+      setNickname("")
+      setEmail("")
+      setPassword("")
+      setRegisterCode("")
     } catch (err) {
       setMessage(err.message)
     }
@@ -32,19 +36,67 @@ function Register() {
 
   return (
     <div className="page-wrapper">
-      <h2>註冊</h2>
-      <form onSubmit={handleRegister} className="page-content">
-        <input type="text" placeholder="暱稱" value={nickname}
-          onChange={(e) => setNickname(e.target.value)} required />
-        <input type="email" placeholder="Email" value={email}
-          onChange={(e) => setEmail(e.target.value)} required />
-        <input type="password" placeholder="Password" value={password}
-          onChange={(e) => setPassword(e.target.value)} required />
-        <input type="text" placeholder="驗證碼 (ex:1234)" value={verifyCode}
-          onChange={(e) => setVerifyCode(e.target.value)} required />
-        <button type="submit">註冊</button>
+      <h2>註冊帳號</h2>
+      <form 
+        onSubmit={handleRegister} 
+        className="register-form" 
+        autoComplete="off"
+      >
+        <div className="form-group">
+          <label>暱稱：</label>
+          <input
+            type="text"
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value)}
+            required
+            autoComplete="off"
+            name="registerNickname"
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Email：</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            autoComplete="new-email"
+            name="registerEmail"
+          />
+        </div>
+
+        <div className="form-group">
+          <label>密碼：</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            autoComplete="new-password"
+            name="registerPassword"
+          />
+        </div>
+
+        <div className="form-group">
+          <label>註冊密碼：</label>
+          <input
+            type="text"
+            value={registerCode}
+            onChange={(e) => setRegisterCode(e.target.value)}
+            required
+            autoComplete="off"
+            name="registerCode"
+          />
+          <p className="note">
+            ※ 請向管理員索取註冊密碼以完成註冊<br />
+            聯絡信箱：<a href="mailto:dokebi871218@gmail.com">dokebi871218@gmail.com</a>
+          </p>
+        </div>
+
+        <button type="submit" className="register-btn">送出註冊</button>
       </form>
-      <p>{message}</p>
+      <p className="register-message">{message}</p>
     </div>
   )
 }

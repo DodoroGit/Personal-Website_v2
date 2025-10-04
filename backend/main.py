@@ -132,7 +132,9 @@ app.add_middleware(
 # ==============================
 @app.post("/register", response_model=UserOut)
 def register(user: UserCreate, db: Session = Depends(get_db)):
-    # 驗證碼檢查 (範例：寫死 "1234")
+    if len(user.password.encode("utf-8")) > 72:
+        raise HTTPException(status_code=400, detail="密碼長度過長，請小於72字元")
+
     if user.verify_code != "1234":
         raise HTTPException(status_code=400, detail="驗證碼錯誤")
 
@@ -145,7 +147,7 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
         nickname=user.nickname,
         email=user.email,
         hashed_password=hashed_password,
-        is_admin=False  # 預設普通用戶
+        is_admin=False
     )
     db.add(new_user)
     db.commit()
@@ -158,8 +160,13 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
     if not user or not verify_password(form_data.password, user.hashed_password):
         raise HTTPException(status_code=400, detail="帳號或密碼錯誤")
 
-    access_token = create_access_token(data={"sub": user.email})
+    access_token = create_access_token(data={
+        "sub": user.email,
+        "role": "admin" if user.is_admin else "user"
+    })
+
     return {"access_token": access_token, "token_type": "bearer"}
+
 
 @app.get("/users/me", response_model=UserOut)
 def read_users_me(current_user: User = Depends(get_current_user)):

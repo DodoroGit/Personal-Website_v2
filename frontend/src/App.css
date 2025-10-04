@@ -359,3 +359,219 @@ nav a:hover {
   gap: 1.5rem;
   margin-top: 1rem;
 }
+
+/* === 右上角登入、註冊、後台管理區 === */
+.auth-buttons {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  display: flex;
+  gap: 1rem;
+  background: rgba(30, 30, 60, 0.7);
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
+.auth-buttons a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #dcdcdc;
+  -webkit-text-stroke: 0.5px #fff;
+  transition: color 0.3s, background-color 0.3s;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-family: Cambria, "DFKai-SB", serif;
+}
+
+.auth-buttons a:hover {
+  color: #ffffff;
+  background-color: rgba(77, 163, 255, 0.2);
+  border-bottom: 2px solid #4da3ff;
+}
+
+/* === 註冊頁面專用樣式 === */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  background: rgba(30, 30, 60, 0.95);
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  color: #e0e0e0;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+}
+
+.form-group input {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.form-group input:focus {
+  border: 1px solid #4da3ff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #9ecfff;
+  margin-top: 0.4rem;
+}
+
+.note a {
+  color: #4da3ff;
+  text-decoration: underline;
+}
+
+.register-btn {
+  background-color: #4da3ff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #69b3ff;
+}
+
+.register-message {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #f9d342;
+}
+
+.logout-btn {
+  background: rgba(77, 163, 255, 0.2);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: Cambria, "DFKai-SB", serif;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background: rgba(77, 163, 255, 0.4);
+}
+
+/* === 個人資訊卡片美化 === */
+.profile-card {
+  background: rgba(30, 30, 60, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  padding: 2rem 2.5rem;
+  max-width: 600px;
+  width: 100%;
+  color: #e0e0e0;
+  text-align: left; /* 讓文字靠左 */
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+}
+
+.profile-card p {
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.profile-card strong {
+  color: #4da3ff;
+  font-weight: 700;
+}
+
+/* === 管理後台會員列表樣式 === */
+.admin-table {
+  width: 100%;
+  max-width: 800px;
+  border-collapse: collapse;
+  background: rgba(30, 30, 60, 0.95);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  color: #e0e0e0;
+  margin-top: 1rem;
+  font-family: Cambria, "DFKai-SB", serif;
+}
+
+.admin-table thead {
+  background: linear-gradient(90deg, #1b263b, #0f3460);
+}
+
+.admin-table th {
+  padding: 1rem;
+  font-size: 1.1rem;
+  text-align: left;
+  color: #4da3ff;
+  letter-spacing: 1px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.admin-table tbody tr {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.admin-table td {
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-table tbody tr:hover {
+  background: rgba(77, 163, 255, 0.1);
+  transform: scale(1.01);
+}
+
+.admin-table td:first-child {
+  color: #f9d342;
+  font-weight: 700;
+}
+
+.admin-table td:last-child {
+  font-weight: 600;
+  color: #82c6ff;
+}
+
+/* 無資料提示 */
+.no-users {
+  background: rgba(30, 30, 60, 0.9);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  color: #bbb;
+  margin-top: 1rem;
+}

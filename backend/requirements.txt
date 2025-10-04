@@ -4,6 +4,7 @@ uvicorn
 python-jose[cryptography]
 
 passlib[bcrypt]
+bcrypt<4.1.0
 
 sqlalchemy
 databases[postgresql]

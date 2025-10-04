@@ -31,26 +31,31 @@ function Admin() {
     <div className="page-wrapper">
       <h2>管理後台</h2>
       {message && <p>{message}</p>}
-      <table className="page-content">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>暱稱</th>
-            <th>Email</th>
-            <th>角色</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((u) => (
-            <tr key={u.id}>
-              <td>{u.id}</td>
-              <td>{u.nickname}</td>
-              <td>{u.email}</td>
-              <td>{u.is_admin ? "Admin" : "User"}</td>
+
+      {users.length > 0 ? (
+        <table className="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>暱稱</th>
+              <th>Email</th>
+              <th>角色</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {users.map((u) => (
+              <tr key={u.id}>
+                <td>{u.id}</td>
+                <td>{u.nickname}</td>
+                <td>{u.email}</td>
+                <td>{u.is_admin ? "Admin" : "User"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        !message && <div className="no-users">目前沒有會員資料</div>
+      )}
     </div>
   )
 }
