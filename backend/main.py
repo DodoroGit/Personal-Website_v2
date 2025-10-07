@@ -13,4 +13,5 @@ app = FastAPI(title="Personal Website Backend")
 setup_cors(app)
 
 # 載入路由
-app.include_router(routes.router, tags=["User & Auth"])
+app.include_router(routes.router, prefix="/api", tags=["User & Auth"])
+

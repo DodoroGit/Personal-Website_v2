@@ -12,7 +12,7 @@ function Admin() {
         return
       }
       try {
-        const res = await fetch("http://localhost:8000/admin/users", {
+        const res = await fetch("http://localhost:8000/api/admin/users", {
           headers: {
             "Authorization": `Bearer ${token}`,
           },

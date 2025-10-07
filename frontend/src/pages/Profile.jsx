@@ -7,7 +7,7 @@ function Profile() {
     const token = localStorage.getItem("token")
     if (!token) return
 
-    fetch("http://localhost:8000/users/me", {
+    fetch("http://localhost:8000/api/users/me", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => {
